@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <parlcd_controller.h>
 #include <utils.h>
