@@ -13,6 +13,7 @@ class RenderController {
 private:
   unsigned short *fb;
   unsigned char *mem_base;
+  Image *backgroundImage;
   typedef struct Pxl {
     unsigned int r : 5;
     unsigned int g : 6;

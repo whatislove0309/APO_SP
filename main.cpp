@@ -34,7 +34,6 @@ int main(int argc, char *argv[]) {
   KnobsController knobsController = KnobsController();
 
   while (1) {
-
     renderController.drawBackground();
 
     if (knobsController.is_red_pressed) {
