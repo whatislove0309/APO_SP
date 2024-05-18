@@ -36,7 +36,6 @@ int main(int argc, char *argv[]) {
   while (1) {
 
     renderController.drawBackground();
-    renderController.update();
 
     if (knobsController.is_red_pressed) {
       renderController.higlightRegion(58, 145, 142, 35);
@@ -47,6 +46,9 @@ int main(int argc, char *argv[]) {
     if (knobsController.is_blue_pressed) {
       renderController.higlightRegion(58, 240, 142, 35);
     }
+
+    knobsController.update();
+    renderController.update();
 
     clock_nanosleep(CLOCK_MONOTONIC, 0, &loop_delay, NULL);
   }

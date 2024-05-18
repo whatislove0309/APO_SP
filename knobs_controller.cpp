@@ -1,6 +1,8 @@
 #include "knobs_controller.h"
 
-KnobsController::KnobsController() {
+KnobsController::KnobsController() {}
+
+void KnobsController::update() {
   knobs = *(knobs_t *)(knobs_mem_base + SPILED_REG_KNOBS_8BIT_o);
   printf("%d %d %d\n", knobs.is_red_pressed, knobs.is_green_pressed, knobs.is_blue_pressed);
   if (knobs.is_red_pressed) {

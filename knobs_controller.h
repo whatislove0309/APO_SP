@@ -22,4 +22,5 @@ private:
 public:
   KnobsController();
   bool is_red_pressed, is_green_pressed, is_blue_pressed;
+  void update();
 };
