@@ -8,15 +8,15 @@ Player::Player(RenderController *render_controller, int x, int y, int width,
 }
 
 void Player::draw() {
-  if (knobs_controller->is_red_pressed) {
+  if (knobs_controller->is_blue_pressed) {
     if (x < 450) {
       x += speed;
     }
   }
-  if (knobs_controller->is_blue_pressed) {
+  if (knobs_controller->is_red_pressed) {
     if (x > 0) {
       x -= speed;
     }
   }
-  render_controller->drawShip(x, width);
+  render_controller->drawShip(x);
 }

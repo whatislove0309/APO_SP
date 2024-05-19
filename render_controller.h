@@ -27,7 +27,7 @@ public:
   void drawMainBackground();
   void drawLevelBackground();
   void drawImage(int x, int y, Image *image);
-  void drawShip(int x, int width);
+  void drawShip(int x);
   void drawMainMenuBtns();
   void reset();
   void higlightRegion(int x, int y, int width, int height);

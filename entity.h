@@ -7,7 +7,7 @@ protected:
     int x, y, width, height, speed;
     RenderController *render_controller;
 public:
-    Entity();
+    Entity(){};
     Entity(RenderController *render_controller, int x, int y, int width, int height);
-    virtual void draw(int x, int y);
+    virtual void draw(int x, int y){};
 };

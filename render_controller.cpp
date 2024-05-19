@@ -63,6 +63,6 @@ void RenderController::higlightRegion(int x, int y, int width, int height) {
 
 void RenderController::drawMainMenuBtns() {}
 
-void RenderController::drawShip(int x, int width) { 
+void RenderController::drawShip(int x) { 
     drawImage(x, 248, ship_1); 
 }
