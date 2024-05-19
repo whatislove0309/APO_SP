@@ -1,6 +1,7 @@
 #include <iostream>
 #include <time.h>
 #include "render_controller.h"
+#include "knobs_controller.h"
 #include "main_menu.h"
 #include "level.h"
 
@@ -9,6 +10,7 @@ class SceneController
 private:
     std::string game_state;
     RenderController render_controller;
+    KnobsController knobs_controller;
     struct timespec loop_delay;
 
     MainMenu main_menu;

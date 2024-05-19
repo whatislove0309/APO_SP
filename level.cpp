@@ -1,10 +1,6 @@
 #include "level.h"
 
-Level::Level() { game_state = "main_menu"; };
-
-void Level::setRenderController(RenderController *render_controller) {
-  this->render_controller = *render_controller;
-}
+Level::Level() { setGameState("level"); }
 
 void Level::draw() {
   render_controller.drawLevelBackground();
@@ -22,9 +18,3 @@ void Level::draw() {
 
   render_controller.renderShip(playerX);
 }
-
-void Level::setKnobsController(KnobsController *knobs_controller) {
-  this->knobs_controller = *knobs_controller;
-}
-
-std::string Level::getGameState() { return game_state; }

@@ -4,10 +4,6 @@ MainMenu::MainMenu() {
     game_state = "main_menu";
 }
 
-void MainMenu::setRenderController(RenderController *render_controller) {
-  this->render_controller = *render_controller;
-}
-
 void MainMenu::draw() {
   render_controller.drawMainBackground();
   knobs_controller.update();
@@ -23,5 +19,3 @@ void MainMenu::draw() {
     render_controller.higlightRegion(58, 240, 142, 35);
   }
 }
-
-std::string MainMenu::getGameState() { return game_state; }
