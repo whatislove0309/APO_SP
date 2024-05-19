@@ -29,6 +29,7 @@ public:
   void drawImage(int x, int y, Image *image);
   void drawShip(int x);
   void drawMainMenuBtns();
+  void drawBullet(int x, int y);
   void reset();
   void higlightRegion(int x, int y, int width, int height);
   void update();

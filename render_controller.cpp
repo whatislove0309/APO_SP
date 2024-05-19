@@ -66,3 +66,7 @@ void RenderController::drawMainMenuBtns() {}
 void RenderController::drawShip(int x) { 
     drawImage(x, 248, ship_1); 
 }
+
+void RenderController::drawBullet(int x, int y) {
+    fb[x * WIDTH + y] = 0xffff;
+}

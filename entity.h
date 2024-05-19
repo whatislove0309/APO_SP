@@ -1,5 +1,6 @@
 #pragma once
 #include "render_controller.h"
+#include "knobs_controller.h"
 
 class Entity
 {

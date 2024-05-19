@@ -1,10 +1,9 @@
 #include "player.h"
 
-Player::Player(RenderController *render_controller, int x, int y, int width,
-               int height, int speed, KnobsController *knobs_controller)
-    : Player::Player(render_controller, x, y, width, height) {
+Player::Player(RenderController *render_controller, KnobsController *knobs_controller)
+    : Player::Player(render_controller, 213, 238, 54, 62) {
   this->knobs_controller = knobs_controller;
-  this->speed = speed;
+  this->speed = 10;
 }
 
 void Player::draw() {
@@ -18,5 +17,12 @@ void Player::draw() {
       x -= speed;
     }
   }
+  if (knobs_controller->is_green_pressed) {
+
+  }
   render_controller->drawShip(x);
+}
+
+void Player::createBullet() {
+    Bullet *bullet = new Bullet(render_controller, x, height);
 }
