@@ -17,16 +17,14 @@ void RenderController::update() {
   }
 }
 
-void RenderController::reset() {
-    fb = new unsigned short[WIDTH * HEIGHT];
-}
+void RenderController::reset() { fb = new unsigned short[WIDTH * HEIGHT]; }
 
 void RenderController::drawMainBackground() {
   drawImage(0, 0, backgroundImage);
 }
 
 void RenderController::drawLevelBackground() {
-    drawImage(0, 0, levelBackgroundImage);
+  drawImage(0, 0, levelBackgroundImage);
 }
 
 void RenderController::drawImage(int x, int y, Image *img) {
@@ -40,7 +38,9 @@ void RenderController::drawImage(int x, int y, Image *img) {
       int board_y = y + i;
 
       if (board_x >= 0 && board_x < WIDTH && board_y >= 0 && board_y < HEIGHT) {
-        fb[board_y * WIDTH + board_x] = img->data[i * img->width + j];
+        if (img->data[i * img->width + j] != 0x0C7E) {
+          fb[board_y * WIDTH + board_x] = img->data[i * img->width + j];
+        }
       }
     }
   }
@@ -63,6 +63,4 @@ void RenderController::higlightRegion(int x, int y, int width, int height) {
 
 void RenderController::renderMainMenuBtns() {}
 
-void RenderController::renderShip() {
-    drawImage(213, 248, ship_1);
-}
+void RenderController::renderShip() { drawImage(213, 248, ship_1); }
