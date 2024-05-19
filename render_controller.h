@@ -22,7 +22,7 @@ private:
 
 public:
   RenderController();
-  void drawBackground();
+  void drawMainBackground();
   void drawImage(int x, int y, Image *image);
   void higlightRegion(int x, int y, int width, int height);
   void update();

@@ -4,7 +4,7 @@ RenderController::RenderController() {
   ParLCDController parlcd_controller = ParLCDController();
   mem_base = parlcd_controller.getMemBase();
   fb = new unsigned short[WIDTH * HEIGHT];
-  
+
   backgroundImage = loadImg("/tmp/oleksandr/assets/background.565");
 }
 
@@ -15,7 +15,7 @@ void RenderController::update() {
   }
 }
 
-void RenderController::drawBackground() {
+void RenderController::drawMainBackground() {
   drawImage(0, 0, backgroundImage);
 }
 
@@ -24,8 +24,8 @@ void RenderController::drawImage(int x, int y, Image *img) {
     return;
   }
 
-  for (int i = 0; i < img->height; ++i) {
-    for (int j = 0; j < img->width; ++j) {
+  for (int i = 0; i < img->height; i++) {
+    for (int j = 0; j < img->width; j++) {
       int board_x = x + j;
       int board_y = y + i;
 
