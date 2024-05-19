@@ -9,12 +9,12 @@ class SceneController
 {
 private:
     std::string game_state;
-    RenderController render_controller;
-    KnobsController knobs_controller;
+    RenderController *render_controller;
+    KnobsController *knobs_controller;
     struct timespec loop_delay;
 
-    MainMenu main_menu;
-    Level level;
+    MainMenu *main_menu;
+    Level *level;
 
 public:
     SceneController();

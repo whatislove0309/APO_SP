@@ -6,7 +6,7 @@
 
 class Level:public Scene {
 protected:
-    Player player;
+    Player *player;
 
 public:
   Level();

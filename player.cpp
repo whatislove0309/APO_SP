@@ -6,7 +6,6 @@ Player::Player(int x, int y, int width, int height, int speed):
 }
 
 void Player::draw() {
-  knobs_controller->update();
   if (knobs_controller->is_red_pressed) {
     if (x < 450) {
       x += speed;

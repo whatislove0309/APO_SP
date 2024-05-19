@@ -6,7 +6,6 @@ MainMenu::MainMenu() {
 
 void MainMenu::draw() {
   render_controller->drawMainBackground();
-  knobs_controller->update();
 
   if (knobs_controller->is_red_pressed) {
     render_controller->higlightRegion(58, 145, 142, 35);
