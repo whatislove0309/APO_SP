@@ -6,6 +6,8 @@ RenderController::RenderController() {
   fb = new unsigned short[WIDTH * HEIGHT];
 
   backgroundImage = loadImg("/tmp/oleksandr/assets/background.565");
+  levelBackgroundImage = loadImg("/tmp/oleksandr/assets/background_level.565");
+  ship_1 = loadImg("/tmp/oleksandr/assets/ship_1.565");
 }
 
 void RenderController::update() {
@@ -21,6 +23,10 @@ void RenderController::reset() {
 
 void RenderController::drawMainBackground() {
   drawImage(0, 0, backgroundImage);
+}
+
+void RenderController::drawLevelBackground() {
+    drawImage(0, 0, levelBackgroundImage);
 }
 
 void RenderController::drawImage(int x, int y, Image *img) {
@@ -56,3 +62,7 @@ void RenderController::higlightRegion(int x, int y, int width, int height) {
 }
 
 void RenderController::renderMainMenuBtns() {}
+
+void RenderController::renderShip() {
+    drawImage(213, 248, ship_1);
+}

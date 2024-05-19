@@ -2,6 +2,7 @@
 #include <time.h>
 #include "render_controller.h"
 #include "main_menu.h"
+#include "level.h"
 
 class SceneController
 {
@@ -11,6 +12,7 @@ private:
     struct timespec loop_delay;
 
     MainMenu main_menu;
+    Level level;
 
 public:
     SceneController();

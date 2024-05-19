@@ -1,6 +1,8 @@
 #include "main_menu.h"
 
-MainMenu::MainMenu() {}
+MainMenu::MainMenu() {
+    game_state = "main_menu";
+}
 
 void MainMenu::setRenderController(RenderController *render_controller) {
   this->render_controller = *render_controller;
@@ -12,7 +14,7 @@ void MainMenu::draw() {
 
   if (knobs_controller.is_red_pressed) {
     render_controller.higlightRegion(58, 145, 142, 35);
-    btn_selected = "level";
+    game_state = "level";
   }
   if (knobs_controller.is_green_pressed) {
     render_controller.higlightRegion(58, 192, 142, 35);
@@ -22,4 +24,4 @@ void MainMenu::draw() {
   }
 }
 
-std::string MainMenu::getGameState() { return btn_selected; }
+std::string MainMenu::getGameState() { return game_state; }

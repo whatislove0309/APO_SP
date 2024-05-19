@@ -7,7 +7,7 @@ private:
     RenderController render_controller;
     KnobsController knobs_controller;
 
-    std::string btn_selected;
+    std::string game_state;
 public:
     MainMenu();
     void draw();

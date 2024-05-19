@@ -8,6 +8,9 @@ SceneController::SceneController() {
 
   main_menu = MainMenu();
   main_menu.setRenderController(&render_controller);
+
+  level = Level();
+  level.setRenderController(&render_controller);
 }
 
 void SceneController::startGame() {
@@ -15,13 +18,13 @@ void SceneController::startGame() {
     if (game_state == "main_menu") {
       main_menu.draw();
       setGameState(main_menu.getGameState());
-        
+
     } else if (game_state == "level") {
-        render_controller.reset();
+      level.draw();
+
     } else if (game_state == "settings_menu") {
 
     } else if (game_state == "score_menu") {
-
     }
 
     render_controller.update();
@@ -30,9 +33,7 @@ void SceneController::startGame() {
   }
 }
 
-std::string SceneController::getGameState() { 
-    return game_state; 
-}
+std::string SceneController::getGameState() { return game_state; }
 
 void SceneController::setGameState(std::string game_state) {
   this->game_state = game_state;

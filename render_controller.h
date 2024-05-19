@@ -14,6 +14,8 @@ private:
   unsigned short *fb;
   unsigned char *mem_base;
   Image *backgroundImage;
+  Image *levelBackgroundImage;
+  Image *ship_1;
   typedef struct Pxl {
     unsigned int r : 5;
     unsigned int g : 6;
@@ -23,11 +25,13 @@ private:
 public:
   RenderController();
   void drawMainBackground();
+  void drawLevelBackground();
   void reset();
   void drawImage(int x, int y, Image *image);
   void higlightRegion(int x, int y, int width, int height);
   void update();
   void renderMainMenuBtns();
+  void renderShip();
 };
 
 #endif
