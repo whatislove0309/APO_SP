@@ -7,7 +7,7 @@ class Player:public Entity
 private:
     KnobsController *knobs_controller;
 public:
-    Player();
+    using Entity::Entity;
     void draw();
     void setKnobsController(KnobsController *knobs_controller);
 };

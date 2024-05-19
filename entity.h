@@ -9,7 +9,6 @@ protected:
 public:
     Entity();
     Entity(int x, int y, int width, int height);
-    Entity(int x, int y, int width, int height, int speed);
     void setRenderController(RenderController *render_controller);
     virtual void draw(int x, int y);
 };

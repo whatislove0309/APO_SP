@@ -2,10 +2,11 @@
 #include "render_controller.h"
 #include "knobs_controller.h"
 #include "scene.h"
+#include "player.h"
 
 class Level:public Scene {
-private:
-  int playerX = 0;
+protected:
+    Player player;
 
 public:
   Level();

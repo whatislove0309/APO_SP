@@ -1,9 +1,5 @@
 #include "player.h"
 
-Player::Player() {
-    this->speed = 5;
-}
-
 void Player::draw() {
   knobs_controller->update();
   if (knobs_controller->is_red_pressed) {
