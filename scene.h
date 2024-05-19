@@ -4,8 +4,8 @@
 
 class Scene {
 protected:
-  RenderController render_controller;
-  KnobsController knobs_controller;
+  RenderController *render_controller;
+  KnobsController *knobs_controller;
 
   std::string game_state;
 

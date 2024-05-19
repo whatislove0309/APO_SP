@@ -38,7 +38,7 @@ void RenderController::drawImage(int x, int y, Image *img) {
       int board_y = y + i;
 
       if (board_x >= 0 && board_x < WIDTH && board_y >= 0 && board_y < HEIGHT) {
-        if (img->data[i * img->width + j] != 0x0C7E) {
+        if (img->data[i * img->width + j] != 0xFFE0) {
           fb[board_y * WIDTH + board_x] = img->data[i * img->width + j];
         }
       }
