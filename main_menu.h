@@ -1,3 +1,4 @@
+#pragma once
 #include "scene.h"
 #include "render_controller.h"
 #include "knobs_controller.h"
