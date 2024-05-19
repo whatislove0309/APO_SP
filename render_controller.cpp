@@ -15,6 +15,10 @@ void RenderController::update() {
   }
 }
 
+void RenderController::reset() {
+    fb = new unsigned short[WIDTH * HEIGHT];
+}
+
 void RenderController::drawMainBackground() {
   drawImage(0, 0, backgroundImage);
 }

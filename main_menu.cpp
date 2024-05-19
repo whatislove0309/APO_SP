@@ -4,6 +4,10 @@ MainMenu::MainMenu() {
     render_controller = RenderController();
 }
 
+void MainMenu::setRenderController(RenderController* render_controller) {
+    this->render_controller = *render_controller;
+}
+
 void MainMenu::draw() {
     render_controller.drawMainBackground();
     knobs_controller.update();

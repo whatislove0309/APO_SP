@@ -11,5 +11,6 @@ private:
 public:
     MainMenu();
     void draw();
+    void setRenderController(RenderController *render_controller);
     std::string getGameState();
 };

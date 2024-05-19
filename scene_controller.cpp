@@ -7,6 +7,7 @@ SceneController::SceneController() {
   game_state = "main_menu";
 
   main_menu = MainMenu();
+  main_menu.setRenderController(&render_controller);
 }
 
 void SceneController::startGame() {
@@ -14,7 +15,12 @@ void SceneController::startGame() {
     if (game_state == "main_menu") {
       main_menu.draw();
       setGameState(main_menu.getGameState());
+        
     } else if (game_state == "level") {
+        render_controller.reset();
+    } else if (game_state == "settings_menu") {
+
+    } else if (game_state == "score_menu") {
 
     }
 
