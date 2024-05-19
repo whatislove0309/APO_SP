@@ -2,3 +2,4 @@ depend
 *.o
 .vscode
 not_star_wars
+.DS_Store

@@ -70,6 +70,7 @@ void freeImage(Image *img) {
 
 unsigned short rgbToRgb565(Pixel *pixel) {
     unsigned short color = (pixel->r >> 3) << 11 | (pixel->g >> 2) << 5 | (pixel->b >> 3);
+    printf("%hu\n", color);
     return color;
 }
 
@@ -100,9 +101,9 @@ Image565 *processImage(Image *img) {
 
 void print565(Image565 *img) {
     for (int i = 0; i < img->width * img->height; i++) {
-        printf("%hu\t", img->data[i]);
+        // printf("%hu\t", img->data[i]);
         if (!((i+1) % img->width)) {
-            printf("\n");
+            // printf("\n");
         }
     }
 }

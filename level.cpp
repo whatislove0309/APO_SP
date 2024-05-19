@@ -1,8 +1,6 @@
 #include "level.h"
 
-Level::Level() {
-    game_state = "main_menu";
-};
+Level::Level() { game_state = "main_menu"; };
 
 void Level::setRenderController(RenderController *render_controller) {
   this->render_controller = *render_controller;
@@ -10,23 +8,23 @@ void Level::setRenderController(RenderController *render_controller) {
 
 void Level::draw() {
   render_controller.drawLevelBackground();
-  render_controller.renderShip();
-  
-  if (direction == "right") {
+
+  if (knobs_controller.is_red_pressed) {
     if (playerX < 450) {
-        playerX++;
-    } else {
-        direction = "left";
+      playerX += 3;
+    }
+  }
+  if (knobs_controller.is_blue_pressed) {
+    if (playerX > 0) {
+      playerX -= 3;
     }
   }
 
-  if (direction == "left") {
-    if (playerX > 0) {
-        playerX--;
-    } else {
-        direction = "right";
-    }
-  }
+  render_controller.renderShip(playerX);
+}
+
+void Level::setKnobsController(KnobsController *knobs_controller) {
+  this->knobs_controller = *knobs_controller;
 }
 
 std::string Level::getGameState() { return game_state; }
