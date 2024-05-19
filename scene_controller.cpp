@@ -7,13 +7,9 @@ SceneController::SceneController() {
 
   game_state = "main_menu";
 
-  main_menu = new MainMenu();
-  main_menu->setRenderController(render_controller);
-  main_menu->setKnobsController(knobs_controller);
+  main_menu = new MainMenu(render_controller, knobs_controller);
 
-  level = new Level();
-  level->setRenderController(render_controller);
-  level->setKnobsController(knobs_controller);
+  level = new Level(render_controller, knobs_controller);
 }
 
 void SceneController::startGame() {

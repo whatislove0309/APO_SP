@@ -1,8 +1,10 @@
 #include "player.h"
 
-Player::Player(int x, int y, int width, int height, int speed):
-    Player::Player(x, y, width, height) {
-    this->speed = speed;
+Player::Player(RenderController *render_controller, int x, int y, int width,
+               int height, int speed, KnobsController *knobs_controller)
+    : Player::Player(render_controller, x, y, width, height) {
+  this->knobs_controller = knobs_controller;
+  this->speed = speed;
 }
 
 void Player::draw() {
@@ -17,8 +19,4 @@ void Player::draw() {
     }
   }
   render_controller->drawShip(x, width);
-}
-
-void Player::setKnobsController(KnobsController *knobsController) {
-  this->knobs_controller = knobs_controller;
 }

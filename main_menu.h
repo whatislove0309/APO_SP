@@ -6,6 +6,7 @@
 class MainMenu:public Scene
 {
 public:
-    MainMenu();
+    using Scene::Scene;
+    MainMenu(RenderController *render_controller, KnobsController *knobs_controller);
     void draw();
 };

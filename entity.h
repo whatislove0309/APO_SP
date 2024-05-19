@@ -8,7 +8,6 @@ protected:
     RenderController *render_controller;
 public:
     Entity();
-    Entity(int x, int y, int width, int height);
-    void setRenderController(RenderController *render_controller);
+    Entity(RenderController *render_controller, int x, int y, int width, int height);
     virtual void draw(int x, int y);
 };

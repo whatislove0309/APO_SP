@@ -1,7 +1,9 @@
 #include "main_menu.h"
 
-MainMenu::MainMenu() {
-    game_state = "main_menu";
+MainMenu::MainMenu(RenderController *render_controller,
+                   KnobsController *knobs_controller)
+    : Scene::Scene(render_controller, knobs_controller) {
+  game_state = "main_menu";
 }
 
 void MainMenu::draw() {

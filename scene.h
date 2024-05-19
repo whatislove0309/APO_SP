@@ -1,6 +1,6 @@
 #pragma once
-#include "render_controller.h"
 #include "knobs_controller.h"
+#include "render_controller.h"
 
 class Scene {
 protected:
@@ -10,9 +10,8 @@ protected:
   std::string game_state;
 
 public:
-  virtual void draw() = 0;
-  void setRenderController(RenderController *render_controller);
-  void setKnobsController(KnobsController *knobs_controller);
+  Scene(RenderController *render_controller, KnobsController *knobs_controller);
+  virtual void draw(){};
   void setGameState(std::string game_state);
   std::string getGameState();
 };

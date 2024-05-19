@@ -1,11 +1,8 @@
 #include "scene.h"
 
-void Scene::setRenderController(RenderController *render_controller) {
-  this->render_controller = render_controller;
-}
-
-void Scene::setKnobsController(KnobsController *knobs_controller) {
-  this->knobs_controller = knobs_controller;
+Scene::Scene(RenderController *render_controller, KnobsController *knobs_controller) {
+    this->render_controller = render_controller;
+    this->knobs_controller = knobs_controller;
 }
 
 void Scene::setGameState(std::string game_state) {

@@ -2,13 +2,13 @@
 #include "entity.h"
 #include "knobs_controller.h"
 
-class Player:public Entity
-{
+class Player : public Entity {
 private:
-    KnobsController *knobs_controller;
+  KnobsController *knobs_controller;
+
 public:
-    using Entity::Entity;
-    Player(int x, int y, int width, int height, int speed);
-    void draw();
-    void setKnobsController(KnobsController *knobs_controller);
+  using Entity::Entity;
+  Player(RenderController *render_controller, int x, int y, int width,
+         int height, int speed, KnobsController *knobs_controller);
+  void draw();
 };
