@@ -68,5 +68,5 @@ void RenderController::drawShip(int x) {
 }
 
 void RenderController::drawBullet(int x, int y) {
-    fb[x * WIDTH + y] = 0xffff;
+    fb[y * WIDTH + x] = 0xffff;
 }

@@ -18,11 +18,12 @@ void Player::draw() {
     }
   }
   if (knobs_controller->is_green_pressed) {
-
+    createBullet();
   }
   render_controller->drawShip(x);
+  bullets[0]->draw();
 }
 
 void Player::createBullet() {
-    Bullet *bullet = new Bullet(render_controller, x, height);
+    bullets.push_back(new Bullet(render_controller, x + width/2 - 10, 320 - height));
 }
