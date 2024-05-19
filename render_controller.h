@@ -26,12 +26,12 @@ public:
   RenderController();
   void drawMainBackground();
   void drawLevelBackground();
-  void reset();
   void drawImage(int x, int y, Image *image);
+  void drawShip(int x, int width);
+  void drawMainMenuBtns();
+  void reset();
   void higlightRegion(int x, int y, int width, int height);
   void update();
-  void renderMainMenuBtns();
-  void renderShip(int x);
 };
 
 #endif
