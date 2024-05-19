@@ -11,6 +11,22 @@ void Level::setRenderController(RenderController *render_controller) {
 void Level::draw() {
   render_controller.drawLevelBackground();
   render_controller.renderShip();
+  
+  if (direction == "right") {
+    if (playerX < 450) {
+        playerX++;
+    } else {
+        direction = "left";
+    }
+  }
+
+  if (direction == "left") {
+    if (playerX > 0) {
+        playerX--;
+    } else {
+        direction = "right";
+    }
+  }
 }
 
 std::string Level::getGameState() { return game_state; }

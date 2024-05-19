@@ -31,7 +31,7 @@ public:
   void higlightRegion(int x, int y, int width, int height);
   void update();
   void renderMainMenuBtns();
-  void renderShip();
+  void renderShip(int x);
 };
 
 #endif

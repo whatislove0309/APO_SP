@@ -5,6 +5,8 @@ class Level {
 private:
   RenderController render_controller;
   std::string game_state;
+  int playerX = 0;
+  std::string direction = "left";
 
 public:
   Level();
