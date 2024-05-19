@@ -6,20 +6,12 @@
 
  *******************************************************************/
 
+#include "scene_controller.h"
+
 #define _POSIX_C_SOURCE 200112L
 
 #define WIDTH 320
 #define HEIGHT 480
-
-#include <cstdlib>
-#include <errno.h>
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <unistd.h>
-
-#include "scene_controller.h"
 
 int main(int argc, char *argv[]) {
 
