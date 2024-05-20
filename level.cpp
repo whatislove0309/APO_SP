@@ -12,11 +12,11 @@ void Level::draw() {
   if (knobs_controller->is_green_pressed) {
     createBullet(player->getX(), player->getWidth(), player->getHeight());
   }
-  
+
   player->draw();
-  for (Bullet *bullet : bullets) {
-    bullet->draw();
-  }
+  // for (Bullet *bullet : bullets) {
+  //   bullet->draw();
+  // }
 }
 
 void Level::createBullet(int x, int width, int height) {
