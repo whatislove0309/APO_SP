@@ -9,7 +9,8 @@ RenderController::RenderController()
   backgroundImage = loadImg("/tmp/oleksandr/assets/background.565");
   levelBackgroundImage = loadImg("/tmp/oleksandr/assets/background_level.565");
   ship_1 = loadImg("/tmp/oleksandr/assets/ship_1.565");
-  asteroid = loadImg("tmp/oleksandr/assets/asteroid.565");
+  asteroid = loadImg("/tmp/oleksandr/assets/asteroid.565");
+  printf("asteroid img %p\n", asteroid);
 }
 
 void RenderController::update()
@@ -84,6 +85,7 @@ void RenderController::drawShip(int x)
 
 void RenderController::drawAsteroid(int x, int y)
 {
+  // printf("asteroid %p drawn at %d %d", asteroid, x, y);
   drawImage(x, y, asteroid);
 }
 

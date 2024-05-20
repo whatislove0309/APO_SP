@@ -6,19 +6,17 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include "asteroid_controller.h"
+#include "bullet_controller.h"
 
 class Level : public Scene {
 protected:
   Player *player;
-  std::vector<Bullet*> bullets;
-  std::chrono::steady_clock::time_point last_bullet_time;
-  const std::chrono::duration<double> bullet_delay = std::chrono::duration<double>(0.2);
-
+  AsteroidController *asteroid_controller;
+  BulletController *bullet_controller;
 
 public:
   using Scene::Scene;
   Level(RenderController *render_controller, KnobsController *knobs_controller);
   void draw();
-  void createBullet(int x);
-  void drawBullets();
 };

@@ -14,4 +14,5 @@ public:
     void reset(int x);
     void draw();
     bool getIsOut();
+    void destroy();
 };
