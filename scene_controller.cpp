@@ -27,7 +27,7 @@ void SceneController::startGame() {
     } else if (game_state == "settings_menu") {
 
     } else if (game_state == "score_menu") {
-
+      
     }
 
     render_controller->update();

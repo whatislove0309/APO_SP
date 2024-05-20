@@ -1,6 +1,6 @@
 #include "bullet.h"
 
-Bullet::Bullet(RenderController *render_controller, int x, int y)
+Bullet::Bullet(RenderController *render_controller, int x)
     :Entity::Entity(render_controller,x, y, 10, 20 ) {
 }
 

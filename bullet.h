@@ -4,9 +4,10 @@
 class Bullet:public Entity
 {
 private:
-    int x, y;
+    int x;
+    int y = 320 - 64;
 public:
     using Entity::Entity;
-    Bullet(RenderController *render_controller, int x, int y);
+    Bullet(RenderController *render_controller, int x);
     void draw();
 };
