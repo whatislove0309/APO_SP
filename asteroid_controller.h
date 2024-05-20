@@ -17,7 +17,7 @@ private:
 public:
     AsteroidController(RenderController *render_controller);
     void generateAsteroids();
-    std::vector<Asteroid *> asteroidsList();
+    std::vector<Asteroid *>* asteroidsList();
     void draw();
     int getRandomX();
 };

@@ -8,12 +8,14 @@
 #include <thread>
 #include "asteroid_controller.h"
 #include "bullet_controller.h"
+#include "collision_controller.h"
 
 class Level : public Scene {
 protected:
   Player *player;
   AsteroidController *asteroid_controller;
   BulletController *bullet_controller;
+  CollisionController *collision_controller;
 
 public:
   using Scene::Scene;

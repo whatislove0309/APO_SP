@@ -16,11 +16,6 @@ void AsteroidController::generateAsteroids()
     }
 }
 
-std::vector<Asteroid *> AsteroidController::asteroidsList()
-{
-    return asteroids;
-}
-
 void AsteroidController::draw()
 {
     for (Asteroid *asteroid : asteroids)
@@ -39,4 +34,9 @@ int AsteroidController::getRandomX()
     std::uniform_int_distribution<> dis(0, 480);
 
     return dis(gen);
+}
+
+std::vector<Asteroid *>* AsteroidController::asteroidsList()
+{
+    return &asteroids;
 }

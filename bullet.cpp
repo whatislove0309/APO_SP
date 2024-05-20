@@ -4,8 +4,6 @@ Bullet::Bullet(RenderController *render_controller, int x)
     : Entity::Entity(render_controller, x, y, 3, 10)
 {
     this->x = x;
-
-    printf("width: %d, height: %d\n", width, height);
 }
 
 void Bullet::draw()

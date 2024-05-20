@@ -41,3 +41,7 @@ void BulletController::shoot(int x1, int x2)
         last_time = now;
     }
 }
+
+std::vector<Bullet *>* BulletController::bulletsList() {
+    return &bullets;
+}

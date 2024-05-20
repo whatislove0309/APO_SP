@@ -7,6 +7,7 @@ Level::Level(RenderController *render_controller,
   player = new Player(render_controller, knobs_controller);
   asteroid_controller = new AsteroidController(render_controller);
   bullet_controller = new BulletController(render_controller);
+  collision_controller = new CollisionController();
   setGameState("level");
 }
 
@@ -21,6 +22,9 @@ void Level::draw()
     int x2 = player->getX() + player->getWidth()/2 + 16;
     bullet_controller->shoot(x1, x2);
   }
+  
+  
+  collision_controller->checkBulletCollision(bullet_controller->bulletsList(), asteroid_controller->asteroidsList());
 
   player->draw();
   asteroid_controller->draw();
