@@ -23,3 +23,8 @@ int Entity::getWidth() {
 int Entity::getHeight() {
     return height;
 }
+
+void Entity::setPosition(int x, int y) {
+    this->x = x;
+    this->y = y;
+}

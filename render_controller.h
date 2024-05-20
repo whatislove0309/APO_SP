@@ -16,6 +16,7 @@ private:
   Image *backgroundImage;
   Image *levelBackgroundImage;
   Image *ship_1;
+  Image *asteroid;
   typedef struct Pxl {
     unsigned int r : 5;
     unsigned int g : 6;
@@ -28,8 +29,8 @@ public:
   void drawLevelBackground();
   void drawImage(int x, int y, Image *image);
   void drawShip(int x);
-  void drawMainMenuBtns();
-  void drawBullet(int x, int y);
+  void drawBullet(int x, int y, int width, int height);
+  void drawAsteroid(int x, int y);
   void reset();
   void higlightRegion(int x, int y, int width, int height);
   void update();

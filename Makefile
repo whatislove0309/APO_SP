@@ -75,7 +75,7 @@ copy-executable: $(TARGET_EXE)
 	ssh $(SSH_OPTIONS) $(TARGET_USER)@$(TARGET_IP) mkdir -p $(TARGET_DIR)
 	ssh $(SSH_OPTIONS) $(TARGET_USER)@$(TARGET_IP) mkdir -p $(TARGET_DIR)/assets
 	scp $(SSH_OPTIONS) $(TARGET_EXE) $(TARGET_USER)@$(TARGET_IP):$(TARGET_DIR)/$(TARGET_EXE)
-	scp $(SSH_OPTIONS) ./assets/background.565 $(TARGET_USER)@$(TARGET_IP):$(TARGET_DIR)/assets/background.565
+	scp $(SSH_OPTIONS) -r ./assets $(TARGET_USER)@$(TARGET_IP):$(TARGET_DIR)
 
 run: copy-executable $(TARGET_EXE)
 	ssh $(SSH_OPTIONS) -t $(TARGET_USER)@$(TARGET_IP) $(TARGET_DIR)/$(TARGET_EXE)
