@@ -3,3 +3,4 @@ depend
 .vscode
 not_star_wars
 .DS_Store
+*.sh
