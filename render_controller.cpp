@@ -18,6 +18,14 @@ void RenderController::update() {
   }
 }
 
+void RenderController::diod(uint32_t *lcd_value, int i) {
+  if (i == 0) {
+    *lcd_value = 4294967295;
+  }
+  *lcd_value -= pow(2, 32 - 1 - i);
+  *(volatile uint32_t *)(mem_base + SPILED_REG_LED_LINE_o) = *lcd_value;
+}
+
 void RenderController::reset() { fb = new unsigned short[WIDTH * HEIGHT]; }
 
 void RenderController::drawMainBackground() {
@@ -45,10 +53,8 @@ void RenderController::drawImage(int x, int y, Image *img) {
     return;
   }
 
-  for (int i = 0; i < img->height; i++)
-  {
-    for (int j = 0; j < img->width; j++)
-    {
+  for (int i = 0; i < img->height; i++) {
+    for (int j = 0; j < img->width; j++) {
       int board_x = x + j;
       int board_y = y + i;
 

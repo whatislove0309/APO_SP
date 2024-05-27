@@ -32,6 +32,9 @@ void SceneController::startGame() {
     }
 
     render_controller->update();
+    
+    uint32_t val_line = 4294967295;
+    render_controller->diod(&val_line, 0);
 
     clock_nanosleep(CLOCK_MONOTONIC, 0, &loop_delay, NULL);
   }

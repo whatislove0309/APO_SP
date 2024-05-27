@@ -2,6 +2,7 @@
 #include <iostream>
 #include <parlcd_controller.h>
 #include <utils.h>
+#include <math.h>
 
 #ifndef RENDERCONTROLLER_H
 #define RENDERCONTROLLER_H
@@ -34,6 +35,7 @@ public:
   void reset();
   void higlightRegion(int x, int y, int width, int height);
   void update();
+  void diod(uint32_t *lcd_value, int i);
 };
 
 #endif
