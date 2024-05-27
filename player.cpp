@@ -8,7 +8,7 @@ Player::Player(RenderController *render_controller, KnobsController *knobs_contr
 
 void Player::draw() {
   if (knobs_controller->is_blue_pressed) {
-    if (x < 450) {
+    if (x < 480 - width) {
       x += speed;
     }
   }

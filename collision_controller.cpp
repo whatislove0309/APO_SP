@@ -3,7 +3,7 @@
 bool CollisionController::checkCollision(Entity *entity_1, Entity *entity_2)
 {
     printf("%d %d\n", entity_1->getX(), entity_1->getY());
-    printf("%d %d\n", entity_2->getX(), entity_2->getY());
+    // printf("%d %d\n", entity_2->getX(), entity_2->getY());
     if (entity_1->getX() + entity_1->getWidth() < entity_2->getX() || entity_2->getX() + entity_2->getWidth() < entity_1->getX())
         return false;
 

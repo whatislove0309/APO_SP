@@ -1,9 +1,10 @@
 #include "bullet.h"
 
-Bullet::Bullet(RenderController *render_controller, int x)
+Bullet::Bullet(RenderController *render_controller, int x, int y)
     : Entity::Entity(render_controller, x, y, 3, 10)
 {
     this->x = x;
+    this->y = y;
 }
 
 void Bullet::draw()

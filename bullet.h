@@ -10,7 +10,7 @@ private:
     bool is_out = false;
 public:
     using Entity::Entity;
-    Bullet(RenderController *render_controller, int x);
+    Bullet(RenderController *render_controller, int x, int y);
     void reset(int x);
     void draw();
     bool getIsOut();

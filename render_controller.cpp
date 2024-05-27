@@ -6,11 +6,10 @@ RenderController::RenderController()
   mem_base = parlcd_controller.getMemBase();
   fb = new unsigned short[WIDTH * HEIGHT];
 
-  backgroundImage = loadImg("/tmp/oleksandr/assets/background.565");
-  levelBackgroundImage = loadImg("/tmp/oleksandr/assets/background_level.565");
-  ship_1 = loadImg("/tmp/oleksandr/assets/ship_1.565");
-  asteroid = loadImg("/tmp/oleksandr/assets/asteroid.565");
-  printf("asteroid img %p\n", asteroid);
+  backgroundImage = loadImg("/tmp/deshkvla/assets/background.565");
+  levelBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
+  ship_1 = loadImg("/tmp/deshkvla/assets/ship_1.565");
+  asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
 }
 
 void RenderController::update()
@@ -41,9 +40,9 @@ void RenderController::drawImage(int x, int y, Image *img)
     return;
   }
 
-  for (int i = 0; i < img->height; i++)
+  for (int i = img->height; i > 0; i--)
   {
-    for (int j = 0; j < img->width; j++)
+    for (int j = img->width; j > 0; j--)
     {
       int board_x = x + j;
       int board_y = y + i;

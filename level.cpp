@@ -20,7 +20,7 @@ void Level::draw()
   {
     int x1 = player->getX() + player->getWidth()/2 - 10;
     int x2 = player->getX() + player->getWidth()/2 + 16;
-    bullet_controller->shoot(x1, x2);
+    bullet_controller->shoot(x1, x2, player->getY());
   }
   
   

@@ -16,6 +16,6 @@ public:
     BulletController(RenderController *render_controller);
     std::vector<Bullet *>* bulletsList();
     void draw();
-    void createBullet(int x);
-    void shoot(int x1, int x2);
+    void createBullet(int x, int y);
+    void shoot(int x1, int x2, int y);
 };

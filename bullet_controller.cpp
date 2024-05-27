@@ -16,7 +16,7 @@ void BulletController::draw()
     }
 }
 
-void BulletController::createBullet(int x)
+void BulletController::createBullet(int x, int y)
 {
     for (Bullet *bullet : bullets)
     {
@@ -28,16 +28,16 @@ void BulletController::createBullet(int x)
     }
 
     bullets.push_back(
-        new Bullet(render_controller, x));
+        new Bullet(render_controller, x, y));
 }
 
-void BulletController::shoot(int x1, int x2)
+void BulletController::shoot(int x1, int x2, int y)
 {
     auto now = std::chrono::steady_clock::now();
     if ((now - last_time) > bullet_delay)
     {
-        createBullet(x1);
-        createBullet(x2);
+        createBullet(x1, y);
+        createBullet(x2, y);
         last_time = now;
     }
 }
