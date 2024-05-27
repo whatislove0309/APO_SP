@@ -4,6 +4,7 @@ Player::Player(RenderController *render_controller, KnobsController *knobs_contr
     : Player::Player(render_controller, 213, 238, 54, 62) {
   this->knobs_controller = knobs_controller;
   this->speed = 10;
+  this->health = maxHealth;
 }
 
 void Player::draw() {
@@ -19,3 +20,11 @@ void Player::draw() {
   }
   render_controller->drawShip(x);
 }
+
+int Player::getHealth() {
+  return health;
+}
+
+void Player::damage() {
+  if (health > 0) health--;
+} 

@@ -31,3 +31,15 @@ void CollisionController::checkBulletCollision(std::vector<Bullet *>* bullets, s
         }
     }
 }
+
+void CollisionController::checkPlayerCollsion(Player *player, std::vector<Asteroid *>* asteroids) {
+    for (Asteroid *asteroid : *asteroids)
+    {
+        if (asteroid->getIsOut()) continue;
+
+        if (checkCollision(player, asteroid)) {
+            asteroid->destroy();
+            player->damage();
+        }
+    }
+}

@@ -23,8 +23,14 @@ void Level::draw()
     bullet_controller->shoot(x1, x2, player->getY());
   }
   
-  
   collision_controller->checkBulletCollision(bullet_controller->bulletsList(), asteroid_controller->asteroidsList());
+  collision_controller->checkPlayerCollsion(player, asteroid_controller->asteroidsList());
+
+  if (!player->getHealth()) {
+    game_state = "game_over";
+  }
+
+  printf("HP: %d\n", player->getHealth());
 
   player->draw();
   asteroid_controller->draw();
