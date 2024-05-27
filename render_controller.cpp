@@ -45,9 +45,9 @@ void RenderController::drawImage(int x, int y, Image *img) {
     return;
   }
 
-  for (int i = img->height; i > 0; i--)
+  for (int i = 0; i < img->height; i++)
   {
-    for (int j = img->width; j > 0; j--)
+    for (int j = 0; j < img->width; j++)
     {
       int board_x = x + j;
       int board_y = y + i;
@@ -92,7 +92,7 @@ void RenderController::drawBullet(int x, int y, int width, int height) {
     for (int j = 0; j < height; j++) {
       int drawY = y + j;
       int drawX = x + i;
-      fb[drawY * WIDTH + drawX] = 0xffff;
+      fb[drawY * WIDTH + drawX] = invertRGB565(0xffff);
     }
   }
 }

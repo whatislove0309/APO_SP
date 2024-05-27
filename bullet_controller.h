@@ -11,7 +11,7 @@ private:
     RenderController *render_controller;
     std::vector<Bullet *> bullets;
     std::chrono::steady_clock::time_point last_time;
-    const std::chrono::duration<double> bullet_delay = std::chrono::duration<double>(0.2);
+    const std::chrono::duration<double> bullet_delay = std::chrono::duration<double>(0.7);
 public:
     BulletController(RenderController *render_controller);
     std::vector<Bullet *>* bulletsList();

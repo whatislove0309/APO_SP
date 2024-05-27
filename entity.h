@@ -11,8 +11,8 @@ public:
     Entity(RenderController *render_controller, int x, int y, int width, int height);
     virtual void draw(int x, int y){};
     void setPosition(int x, int y);
-    int getX();
-    int getY();
+    virtual int getX();
+    virtual int getY();
     int getWidth();
     int getHeight();
 };

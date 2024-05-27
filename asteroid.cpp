@@ -4,13 +4,12 @@ Asteroid::Asteroid(RenderController *render_controller, int x)
     : Entity::Entity(render_controller, x, 0, 21, 21)
 {
     this->x = x;
-    this->y = y;
 }
 
 void Asteroid::draw()
 {
-    y += 10;
-    if (y > 0)
+    y += 5;
+    if (y < 320 + height)
     {
         render_controller->drawAsteroid(x, y);
     }

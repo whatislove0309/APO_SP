@@ -1,10 +1,9 @@
 #include "bullet.h"
 
-Bullet::Bullet(RenderController *render_controller, int x, int y)
-    : Entity::Entity(render_controller, x, y, 3, 10)
+Bullet::Bullet(RenderController *render_controller, int x)
+    : Entity::Entity(render_controller, x, 320, 3, 10)
 {
     this->x = x;
-    this->y = y;
 }
 
 void Bullet::draw()
@@ -28,10 +27,18 @@ bool Bullet::getIsOut()
 void Bullet::reset(int x)
 {
     this->x = x;
-    this->is_out = false;
     this->y = startY;
+    this->is_out = false;
 }
 
 void Bullet::destroy() {
     is_out = true;
+}
+
+int Bullet::getY() {
+    return y;
+}
+
+int Bullet::getX() {
+    return x;
 }

@@ -28,7 +28,7 @@ void BulletController::createBullet(int x, int y)
     }
 
     bullets.push_back(
-        new Bullet(render_controller, x, y));
+        new Bullet(render_controller, x));
 }
 
 void BulletController::shoot(int x1, int x2, int y)
