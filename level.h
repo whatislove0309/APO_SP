@@ -1,11 +1,12 @@
 #pragma once
+#include <iostream>
+#include <chrono>
+#include <thread>
+
 #include "knobs_controller.h"
 #include "player.h"
 #include "render_controller.h"
 #include "scene.h"
-#include <iostream>
-#include <chrono>
-#include <thread>
 #include "asteroid_controller.h"
 #include "bullet_controller.h"
 #include "collision_controller.h"

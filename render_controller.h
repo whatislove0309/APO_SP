@@ -1,8 +1,10 @@
 #pragma once
 #include <iostream>
-#include <parlcd_controller.h>
 #include <utils.h>
 #include <math.h>
+
+#include "parlcd_controller.h"
+#include "font_types.h"
 
 #ifndef RENDERCONTROLLER_H
 #define RENDERCONTROLLER_H
@@ -19,14 +21,20 @@ private:
   Image *ship_1;
   Image *asteroid;
   Image *gameOverBackgroundImage;
+  
   typedef struct Pxl {
     unsigned int r : 5;
     unsigned int g : 6;
     unsigned int b : 5;
   } pxl_t;
 
+  void drawImage(int x, int y, Image *img);
+  void drawChar(int x, int y, char c, const font_descriptor_t* font, uint16_t color);
+
 public:
   RenderController();
+  void reset();
+  void update();
   void drawMainBackground();
   void drawLevelBackground();
   void drawGameOverBackground();
@@ -34,10 +42,8 @@ public:
   void drawShip(int x);
   void drawBullet(int x, int y, int width, int height);
   void drawAsteroid(int x, int y);
-  void reset();
   void higlightRegion(int x, int y, int width, int height);
-  void update();
-  void diod(uint32_t *lcd_value, int i);
+  void drawText(int x, int y, const char* text, const font_descriptor_t* font, uint16_t color);
 };
 
 #endif

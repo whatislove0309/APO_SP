@@ -10,9 +10,6 @@
 
 #define _POSIX_C_SOURCE 200112L
 
-#define WIDTH 320
-#define HEIGHT 480
-
 int main(int argc, char *argv[]) {
 
   SceneController scene_controller = SceneController();
