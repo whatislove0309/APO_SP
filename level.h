@@ -9,6 +9,7 @@
 #include "asteroid_controller.h"
 #include "bullet_controller.h"
 #include "collision_controller.h"
+#include "diod_controller.h"
 
 class Level : public Scene {
 protected:
@@ -16,9 +17,10 @@ protected:
   AsteroidController *asteroid_controller;
   BulletController *bullet_controller;
   CollisionController *collision_controller;
+  DiodController *diod_controller;
 
 public:
   using Scene::Scene;
-  Level(RenderController *render_controller, KnobsController *knobs_controller);
+  Level(RenderController *render_controller, KnobsController *knobs_controller, DiodController *diod_controller);
   void draw();
 };

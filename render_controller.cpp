@@ -18,17 +18,7 @@ void RenderController::update() {
   }
 }
 
-void RenderController::diod(uint32_t *lcd_value, int i) {
-  if (i == 0) {
-    *lcd_value = 4294967295;
-  }
-  *lcd_value -= pow(2, 32 - 1 - i);
-  *(volatile uint32_t *)(mem_base + SPILED_REG_LED_LINE_o) = *lcd_value;
-}
-
-void RenderController::reset() { 
-  fb = new unsigned short[WIDTH * HEIGHT]; 
-}
+void RenderController::reset() { fb = new unsigned short[WIDTH * HEIGHT]; }
 
 void RenderController::drawMainBackground() {
   drawImage(0, 0, backgroundImage);
