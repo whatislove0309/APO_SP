@@ -33,18 +33,6 @@ void RenderController::drawGameOverBackground() {
   drawImage(0, 0, gameOverBackgroundImage);
 }
 
-uint16_t invertRGB565(uint16_t pixel) {
-  uint16_t red = (pixel >> 11) & 0x1F;
-  uint16_t green = (pixel >> 5) & 0x3F;
-  uint16_t blue = pixel & 0x1F;
-
-  uint16_t red_inverted = 0x1F - red;
-  uint16_t green_inverted = 0x3F - green;
-  uint16_t blue_inverted = 0x1F - blue;
-
-  return (red_inverted << 11) | (green_inverted << 5) | blue_inverted;
-}
-
 void RenderController::drawImage(int x, int y, Image *img) {
   if (img == NULL || img->data == NULL) {
     return;
@@ -59,7 +47,6 @@ void RenderController::drawImage(int x, int y, Image *img) {
         uint16_t color = img->data[i * img->width + j];
 
         if (color != 0xFFE0) {
-          // uint16_t invertedColor = invertRGB565(color);
           fb[board_y * WIDTH + board_x] = color;
         }
       }
@@ -99,3 +86,5 @@ void RenderController::drawBullet(int x, int y, int width, int height) {
     }
   }
 }
+
+
