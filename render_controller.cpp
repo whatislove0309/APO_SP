@@ -7,6 +7,7 @@ RenderController::RenderController() {
 
   backgroundImage = loadImg("/tmp/deshkvla/assets/background.565");
   levelBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
+  gameOverBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
   ship_1 = loadImg("/tmp/deshkvla/assets/ship_1.565");
   asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
 }
@@ -26,6 +27,10 @@ void RenderController::drawMainBackground() {
 
 void RenderController::drawLevelBackground() {
   drawImage(0, 0, levelBackgroundImage);
+}
+
+void RenderController::drawGameOverBackground() {
+  drawImage(0, 0, gameOverBackgroundImage);
 }
 
 uint16_t invertRGB565(uint16_t pixel) {

@@ -18,6 +18,7 @@ private:
   Image *levelBackgroundImage;
   Image *ship_1;
   Image *asteroid;
+  Image *gameOverBackgroundImage;
   typedef struct Pxl {
     unsigned int r : 5;
     unsigned int g : 6;
@@ -28,6 +29,7 @@ public:
   RenderController();
   void drawMainBackground();
   void drawLevelBackground();
+  void drawGameOverBackground();
   void drawImage(int x, int y, Image *image);
   void drawShip(int x);
   void drawBullet(int x, int y, int width, int height);
