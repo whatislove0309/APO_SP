@@ -11,7 +11,7 @@ Player::Player(RenderController *render_controller,
 }
 
 void Player::draw() {
-  diod_controller->diod();
+  diod_controller->diod(health);
   if (knobs_controller->is_blue_pressed) {
     if (x < 480 - width) {
       x += speed;
