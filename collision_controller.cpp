@@ -1,9 +1,5 @@
 #include "collision_controller.h"
 
-CollisionController::CollisionController(Level *level) {
-  this->level = level;
-}
-
 bool CollisionController::checkCollision(Entity *entity_1, Entity *entity_2) {
   if (entity_1->getX() + entity_1->getWidth() < entity_2->getX() ||
       entity_2->getX() + entity_2->getWidth() < entity_1->getX())
@@ -43,7 +39,6 @@ void CollisionController::checkPlayerCollsion(
     if (checkCollision(player, asteroid)) {
       asteroid->destroy();
       player->damage();
-      level->updateScore();
     }
   }
 }
