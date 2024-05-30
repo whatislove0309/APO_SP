@@ -7,7 +7,7 @@ RenderController::RenderController() {
 
   backgroundImage = loadImg("/tmp/deshkvla/assets/background.565");
   levelBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
-  gameOverBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
+  gameOverBackgroundImage = loadImg("/tmp/deshkvla/assets/background_gameover.565");
   ship_1 = loadImg("/tmp/deshkvla/assets/ship_1.565");
   asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
 }
@@ -59,8 +59,8 @@ void RenderController::drawImage(int x, int y, Image *img) {
         uint16_t color = img->data[i * img->width + j];
 
         if (color != 0xFFE0) {
-          uint16_t invertedColor = invertRGB565(color);
-          fb[board_y * WIDTH + board_x] = invertedColor;
+          // uint16_t invertedColor = invertRGB565(color);
+          fb[board_y * WIDTH + board_x] = color;
         }
       }
     }
@@ -95,7 +95,7 @@ void RenderController::drawBullet(int x, int y, int width, int height) {
     for (int j = 0; j < height; j++) {
       int drawY = y + j;
       int drawX = x + i;
-      fb[drawY * WIDTH + drawX] = invertRGB565(0xffff);
+      fb[drawY * WIDTH + drawX] = 0xffff;
     }
   }
 }
