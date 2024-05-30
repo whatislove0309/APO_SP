@@ -12,4 +12,5 @@ private:
     unsigned char *diod_mem_base;
 public:
     DiodController();
+    void diod();
 };
