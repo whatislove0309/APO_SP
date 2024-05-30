@@ -13,14 +13,14 @@ private:
   int health;
   int maxHealth = 4;
   std::chrono::time_point<std::chrono::steady_clock> lastRecoveryTime;
-  const int recoveryInterval = 15;
+  const int recoveryInterval = 20;
 
 public:
   using Entity::Entity;
   Player(RenderController *render_controller, KnobsController *knobs_controller,
          DiodController *diod_controller);
-  void draw();
   int getHealth();
+  void draw();
   void damage();
   void recover();
 };

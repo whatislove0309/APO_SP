@@ -10,8 +10,8 @@ SceneController::SceneController() {
   game_state = "main_menu";
 
   main_menu = new MainMenu(render_controller, knobs_controller);
-
   level = new Level(render_controller, knobs_controller, diod_controller);
+  gameover_menu = new GameOverMenu(render_controller, knobs_controller);
 }
 
 void SceneController::startGame() {
@@ -27,7 +27,7 @@ void SceneController::startGame() {
       setGameState(level->getGameState());
 
     } else if (game_state == "game_over") {
-      main_menu->draw();
+      gameover_menu->draw();
     } else if (game_state == "score_menu") {
       
     }

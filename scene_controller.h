@@ -6,6 +6,7 @@
 #include "main_menu.h"
 #include "level.h"
 #include "diod_controller.h"
+#include "gameover_menu.h"
 
 class SceneController
 {
@@ -18,6 +19,8 @@ private:
 
     MainMenu *main_menu;
     Level *level;
+    GameOverMenu *gameover_menu;
+
 
 public:
     SceneController();
