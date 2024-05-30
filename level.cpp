@@ -29,8 +29,6 @@ void Level::draw() {
     game_state = "game_over";
   }
 
-  printf("HP: %d\n", player->getHealth());
-
   player->draw();
   asteroid_controller->draw();
   bullet_controller->draw();

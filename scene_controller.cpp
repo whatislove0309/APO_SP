@@ -5,7 +5,6 @@ SceneController::SceneController() {
   render_controller = new RenderController();
   knobs_controller = new KnobsController();
   diod_controller = new DiodController();
-  printf("main diod controller: %p\n", diod_controller);
 
   game_state = "main_menu";
 
