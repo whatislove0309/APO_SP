@@ -7,7 +7,8 @@ RenderController::RenderController() {
 
   backgroundImage = loadImg("/tmp/deshkvla/assets/background.565");
   levelBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
-  gameOverBackgroundImage = loadImg("/tmp/deshkvla/assets/background_gameover.565");
+  gameOverBackgroundImage =
+      loadImg("/tmp/deshkvla/assets/background_gameover.565");
   ship_1 = loadImg("/tmp/deshkvla/assets/ship_1.565");
   asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
 }
@@ -82,13 +83,9 @@ void RenderController::higlightRegion(int x, int y, int width, int height) {
   }
 }
 
-void RenderController::drawShip(int x) { 
-  drawImage(x, 248, ship_1); 
-}
+void RenderController::drawShip(int x) { drawImage(x, 248, ship_1); }
 
-void RenderController::drawAsteroid(int x, int y) {
-  drawImage(x, y, asteroid);
-}
+void RenderController::drawAsteroid(int x, int y) { drawImage(x, y, asteroid); }
 
 void RenderController::drawBullet(int x, int y, int width, int height) {
   for (int i = 0; i < width; i++) {
@@ -97,5 +94,38 @@ void RenderController::drawBullet(int x, int y, int width, int height) {
       int drawX = x + i;
       fb[drawY * WIDTH + drawX] = 0xffff;
     }
+  }
+}
+
+void RenderController::drawChar(int x, int y, char c,
+                                const font_descriptor_t *font, uint16_t color) {
+  if (c < font->firstchar || c >= font->firstchar + font->size) {
+    c = font->defaultchar;
+  }
+
+  int index = c - font->firstchar;
+  const font_bits_t *charBits = font->bits + font->offset[index];
+  int charWidth = font->width ? font->width[index] : font->maxwidth;
+
+  for (int i = 0; i < font->height; i++) {
+    font_bits_t bits = charBits[i];
+    for (int j = 0; j < charWidth; j++) {
+      if (bits & (1 << (font->maxwidth - 1 - j))) {
+        int drawX = x + j;
+        int drawY = y + i;
+        if (drawX >= 0 && drawX < WIDTH && drawY >= 0 && drawY < HEIGHT) {
+          fb[drawY * WIDTH + drawX] = color;
+        }
+      }
+    }
+  }
+}
+
+void RenderController::drawText(int x, int y, const char *text,
+                                const font_descriptor_t *font, uint16_t color) {
+  while (*text) {
+    drawChar(x, y, *text, font, color);
+    x += font->width ? font->width[*text - font->firstchar] : font->maxwidth;
+    text++;
   }
 }
