@@ -21,6 +21,7 @@ private:
   Image *ship_1;
   Image *asteroid;
   Image *gameOverBackgroundImage;
+  font_descriptor_t* font = &font_rom8x16;
   
   typedef struct Pxl {
     unsigned int r : 5;
@@ -28,8 +29,7 @@ private:
     unsigned int b : 5;
   } pxl_t;
 
-  void drawImage(int x, int y, Image *img);
-  void drawChar(int x, int y, char c, const font_descriptor_t* font, uint16_t color);
+  void drawChar(int x, int y, char c, uint16_t color);
 
 public:
   RenderController();
@@ -43,7 +43,7 @@ public:
   void drawBullet(int x, int y, int width, int height);
   void drawAsteroid(int x, int y);
   void higlightRegion(int x, int y, int width, int height);
-  void drawText(int x, int y, const char* text, const font_descriptor_t* font, uint16_t color);
+  void drawText(int x, int y, const char* text, uint16_t color);
 };
 
 #endif

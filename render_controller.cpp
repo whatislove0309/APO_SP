@@ -84,8 +84,7 @@ void RenderController::drawBullet(int x, int y, int width, int height) {
   }
 }
 
-void RenderController::drawChar(int x, int y, char c,
-                                const font_descriptor_t *font, uint16_t color) {
+void RenderController::drawChar(int x, int y, char c, uint16_t color) {
   if (c < font->firstchar || c >= font->firstchar + font->size) {
     c = font->defaultchar;
   }
@@ -108,10 +107,9 @@ void RenderController::drawChar(int x, int y, char c,
   }
 }
 
-void RenderController::drawText(int x, int y, const char *text,
-                                const font_descriptor_t *font, uint16_t color) {
+void RenderController::drawText(int x, int y, const char *text, uint16_t color) {
   while (*text) {
-    drawChar(x, y, *text, font, color);
+    drawChar(x, y, *text, color);
     x += font->width ? font->width[*text - font->firstchar] : font->maxwidth;
     text++;
   }
