@@ -26,7 +26,9 @@ void RenderController::diod(uint32_t *lcd_value, int i) {
   *(volatile uint32_t *)(mem_base + SPILED_REG_LED_LINE_o) = *lcd_value;
 }
 
-void RenderController::reset() { fb = new unsigned short[WIDTH * HEIGHT]; }
+void RenderController::reset() { 
+  fb = new unsigned short[WIDTH * HEIGHT]; 
+}
 
 void RenderController::drawMainBackground() {
   drawImage(0, 0, backgroundImage);
@@ -62,7 +64,6 @@ void RenderController::drawImage(int x, int y, Image *img) {
         uint16_t color = img->data[i * img->width + j];
 
         if (color != 0xFFE0) {
-          // Invert the color before drawing
           uint16_t invertedColor = invertRGB565(color);
           fb[board_y * WIDTH + board_x] = invertedColor;
         }
@@ -86,10 +87,11 @@ void RenderController::higlightRegion(int x, int y, int width, int height) {
   }
 }
 
-void RenderController::drawShip(int x) { drawImage(x, 248, ship_1); }
+void RenderController::drawShip(int x) { 
+  drawImage(x, 248, ship_1); 
+}
 
 void RenderController::drawAsteroid(int x, int y) {
-  // printf("asteroid %p drawn at %d %d", asteroid, x, y);
   drawImage(x, y, asteroid);
 }
 

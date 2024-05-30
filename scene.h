@@ -11,7 +11,7 @@ protected:
 
 public:
   Scene(RenderController *render_controller, KnobsController *knobs_controller);
-  virtual void draw(){};
+  virtual void draw() {};
   void setGameState(std::string game_state);
   std::string getGameState();
 };
