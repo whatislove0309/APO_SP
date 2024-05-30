@@ -1,5 +1,9 @@
 #include "collision_controller.h"
 
+CollisionController::CollisionController(std::function<void()> callback) {
+  this->updateScoreCallback = callback;
+}
+
 bool CollisionController::checkCollision(Entity *entity_1, Entity *entity_2) {
   if (entity_1->getX() + entity_1->getWidth() < entity_2->getX() ||
       entity_2->getX() + entity_2->getWidth() < entity_1->getX())
@@ -25,6 +29,9 @@ void CollisionController::checkBulletCollision(
       if (checkCollision(bullet, asteroid)) {
         bullet->destroy();
         asteroid->destroy();
+        if (updateScoreCallback) {
+          updateScoreCallback();
+        }
       }
     }
   }
