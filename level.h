@@ -19,8 +19,11 @@ protected:
   CollisionController *collision_controller;
   DiodController *diod_controller;
 
+  int score = 0;
+
 public:
   using Scene::Scene;
   Level(RenderController *render_controller, KnobsController *knobs_controller, DiodController *diod_controller);
   void draw();
+  void updateScore();
 };

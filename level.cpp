@@ -8,7 +8,7 @@ Level::Level(RenderController *render_controller,
   player = new Player(render_controller, knobs_controller, diod_controller);
   asteroid_controller = new AsteroidController(render_controller);
   bullet_controller = new BulletController(render_controller);
-  collision_controller = new CollisionController();
+  collision_controller = new CollisionController(this);
   setGameState("level");
 }
 
@@ -29,7 +29,13 @@ void Level::draw() {
     game_state = "game_over";
   }
 
+  printf("Scor: %d\n", score);
+
   player->draw();
   asteroid_controller->draw();
   bullet_controller->draw();
+}
+
+void Level::updateScore() {
+  score += 10;
 }
