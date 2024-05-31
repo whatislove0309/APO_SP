@@ -2,6 +2,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <cstdio>
 
 #include "knobs_controller.h"
 #include "player.h"
@@ -27,4 +28,5 @@ public:
   Level(RenderController *render_controller, KnobsController *knobs_controller, DiodController *diod_controller);
   void draw();
   void updateScore();
+  void printScore();
 };

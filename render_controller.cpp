@@ -11,6 +11,8 @@ RenderController::RenderController() {
       loadImg("/tmp/deshkvla/assets/background_gameover.565");
   ship_1 = loadImg("/tmp/deshkvla/assets/ship_1.565");
   asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
+
+  fdes = &font_rom8x16;
 }
 
 void RenderController::update() {
@@ -84,10 +86,19 @@ void RenderController::drawBullet(int x, int y, int width, int height) {
   }
 }
 
-void RenderController::drawChar(int x, int y, char ch, unsigned short color,
-                                int scale) {
+void RenderController::drawText(int x, int y, const char *text, uint16_t color, int scale) {
+  while (*text) {
+    drawChar(x, y, *text, color, scale);
+    x += (charWidth(*text) + 20);
+    text++;
+  }
+}
+
+
+void RenderController::drawChar(int x, int y, char ch, uint16_t color, int scale) {
   int w = charWidth(ch);
   const font_bits_t *ptr;
+  
   if ((ch >= fdes->firstchar) && (ch - fdes->firstchar < fdes->size)) {
     if (fdes->offset) {
       ptr = &fdes->bits[fdes->offset[ch - fdes->firstchar]];
@@ -95,10 +106,9 @@ void RenderController::drawChar(int x, int y, char ch, unsigned short color,
       int bw = (fdes->maxwidth + 15) / 16;
       ptr = &fdes->bits[(ch - fdes->firstchar) * bw * fdes->height];
     }
-    int i, j;
-    for (i = 0; i < fdes->height; i++) {
+    for (int i = 0; i < fdes->height; i++) {
       font_bits_t val = *ptr;
-      for (j = 0; j < w; j++) {
+      for (int j = 0; j < w; j++) {
         if ((val & 0x8000) != 0) {
           drawPixel(x + scale * j, y + scale * i, color, scale);
         }
@@ -119,10 +129,9 @@ int RenderController::charWidth(int ch) {
   return width;
 }
 
-void RenderController::drawPixel(int x, int y, unsigned short color, int scale) {
-  int i, j;
-  for (i = 0; i < scale; i++) {
-    for (j = 0; j < scale; j++) {
+void RenderController::drawPixel(int x, int y, uint16_t color, int scale) {
+  for (int i = 0; i < scale; i++) {
+    for (int j = 0; j < scale; j++) {
       if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
         for (int k = 0; k < 5; k++) {
           fb[x + k + WIDTH * y] = color;
@@ -131,3 +140,4 @@ void RenderController::drawPixel(int x, int y, unsigned short color, int scale) 
     }
   }
 }
+

@@ -30,8 +30,6 @@ private:
     unsigned int b : 5;
   } pxl_t;
 
-  void drawImage(int x, int y, Image *img);
-
 public:
   RenderController();
   void reset();
@@ -44,9 +42,10 @@ public:
   void drawBullet(int x, int y, int width, int height);
   void drawAsteroid(int x, int y);
   void higlightRegion(int x, int y, int width, int height);
-  void drawChar(int x, int y, char ch, unsigned short color, int scale);
+  void drawChar(int x, int y, char ch, uint16_t color, int scale);
   int charWidth(int ch);
-  void drawPixel(int x, int y, unsigned short color, int scale);
+  void drawPixel(int x, int y, uint16_t color, int scale);
+  void drawText(int x, int y, const char *text, uint16_t color, int scale);
 };
 
 #endif
