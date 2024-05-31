@@ -21,7 +21,6 @@ private:
     Level *level;
     GameOverMenu *gameover_menu;
 
-
 public:
     SceneController();
     std::string getGameState();

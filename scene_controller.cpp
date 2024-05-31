@@ -26,7 +26,10 @@ void SceneController::startGame() {
       setGameState(level->getGameState());
 
     } else if (game_state == "game_over") {
+      gameover_menu->setScore(level->getScore());
       gameover_menu->draw();
+      setGameState(gameover_menu->getGameState());
+      
     } else if (game_state == "score_menu") {
       
     }

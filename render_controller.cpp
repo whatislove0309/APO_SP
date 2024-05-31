@@ -129,6 +129,17 @@ int RenderController::charWidth(int ch) {
   return width;
 }
 
+int RenderController::wordWidth(const char* text) {
+  int totalWidth = 0;
+
+  while (*text) {
+    totalWidth += charWidth(*text);
+    text++;
+  }
+
+  return totalWidth;
+}
+
 void RenderController::drawPixel(int x, int y, uint16_t color, int scale) {
   for (int i = 0; i < scale; i++) {
     for (int j = 0; j < scale; j++) {

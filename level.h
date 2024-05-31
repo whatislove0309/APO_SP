@@ -29,4 +29,5 @@ public:
   void draw();
   void updateScore();
   void printScore();
+  int getScore();
 };

@@ -44,3 +44,7 @@ void Level::printScore() {
   sprintf(buffer, "Score:%d", score);
   render_controller->drawText(20, 20, buffer, 0xfff, 2);
 }
+
+int Level::getScore() {
+  return score;
+}
