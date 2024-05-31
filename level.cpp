@@ -15,7 +15,7 @@ Level::Level(RenderController *render_controller,
 void Level::draw() {
   render_controller->drawLevelBackground();
   asteroid_controller->generateAsteroids();
-  render_controller->drawText(10, 20, "Hello World!", &font_rom8x16, 0xFFFF);
+  render_controller->drawText(10, 20, "Hello World!", 0xFFFF);
 
   if (knobs_controller->is_green_pressed) {
     int x1 = player->getX() + player->getWidth() / 2 - 10;
@@ -30,7 +30,7 @@ void Level::draw() {
     game_state = "game_over";
   }
 
-  printf("Scor: %d\n", score);
+  printf("Score: %d\n", score);
 
   player->draw();
   asteroid_controller->draw();
