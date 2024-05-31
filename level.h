@@ -25,7 +25,8 @@ protected:
 
 public:
   using Scene::Scene;
-  Level(RenderController *render_controller, KnobsController *knobs_controller, DiodController *diod_controller);
+  Level(RenderController *render_controller, KnobsController *knobs_controller, 
+    DiodController *diod_controller, Player *player);
   void draw();
   void updateScore();
   void printScore();
