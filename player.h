@@ -1,15 +1,21 @@
 #pragma once
 #include <chrono>
-#include <vector>
 
 #include "bullet.h"
 #include "diod_controller.h"
 #include "entity.h"
+#include "utils.h"
 
 class Player : public Entity {
 private:
   KnobsController *knobs_controller;
   DiodController *diod_controller;
+
+  Image *ship_1;
+  Image *ship_2;
+  Image *ship_3;
+  Image *active_ship;
+
   int health;
   int maxHealth = 4;
   int defX = 213;

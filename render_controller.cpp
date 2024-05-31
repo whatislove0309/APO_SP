@@ -8,7 +8,6 @@ RenderController::RenderController() {
   backgroundImage = loadImg("/tmp/deshkvla/assets/background.565");
   levelBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
   gameOverBackgroundImage = loadImg("/tmp/deshkvla/assets/background_gameover.565");
-  ship_1 = loadImg("/tmp/deshkvla/assets/ship_1.565");
   asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
 
   fdes = &font_rom8x16;
@@ -73,8 +72,8 @@ void RenderController::higlightRegion(int x, int y, int width, int height) {
   }
 }
 
-void RenderController::drawShip(int x) { 
-  drawImage(x, 248, ship_1); 
+void RenderController::drawShip(int x, Image *image) { 
+  drawImage(x, 248, image); 
 }
 
 void RenderController::drawAsteroid(int x, int y) { 

@@ -9,6 +9,12 @@ Player::Player(RenderController *render_controller,
   this->speed = 10;
   this->health = maxHealth;
   this->lastRecoveryTime = std::chrono::steady_clock::now();
+
+  ship_1 = loadImg("/tmp/deshkvla/assets/ship_1.565");
+  ship_2 = loadImg("/tmp/deshkvla/assets/ship_2.565");
+  ship_3 = loadImg("/tmp/deshkvla/assets/ship_3.565");
+
+  active_ship = ship_1;
 }
 
 void Player::draw() {
@@ -33,7 +39,7 @@ void Player::draw() {
     lastRecoveryTime = now;
   }
 
-  render_controller->drawShip(x);
+  render_controller->drawShip(x, active_ship);
 }
 
 int Player::getHealth() { return health; }

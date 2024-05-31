@@ -18,7 +18,6 @@ private:
   unsigned char *mem_base;
   Image *backgroundImage;
   Image *levelBackgroundImage;
-  Image *ship_1;
   Image *asteroid;
   Image *gameOverBackgroundImage;
 
@@ -38,7 +37,7 @@ public:
   void drawLevelBackground();
   void drawGameOverBackground();
   void drawImage(int x, int y, Image *image);
-  void drawShip(int x);
+  void drawShip(int x, Image *image);
   void drawBullet(int x, int y, int width, int height);
   void drawAsteroid(int x, int y);
   void higlightRegion(int x, int y, int width, int height);
