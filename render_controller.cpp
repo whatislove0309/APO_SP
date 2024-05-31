@@ -8,6 +8,7 @@ RenderController::RenderController() {
   backgroundImage = loadImg("/tmp/deshkvla/assets/background.565");
   levelBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
   gameOverBackgroundImage = loadImg("/tmp/deshkvla/assets/background_gameover.565");
+  settingsBackgroundImage = loadImg("/tmp/deshkvla/assets/background_gameover.565");
   asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
 
   fdes = &font_rom8x16;
@@ -34,6 +35,10 @@ void RenderController::drawLevelBackground() {
 
 void RenderController::drawGameOverBackground() {
   drawImage(0, 0, gameOverBackgroundImage);
+}
+
+void RenderController::drawSettingsBackground() {
+  drawImage(0, 0, settingsBackgroundImage);
 }
 
 void RenderController::drawImage(int x, int y, Image *img) {
