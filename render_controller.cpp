@@ -97,35 +97,50 @@ void RenderController::drawBullet(int x, int y, int width, int height) {
   }
 }
 
-void RenderController::drawChar(int x, int y, char c,
-                                const font_descriptor_t *font, uint16_t color) {
-  if (c < font->firstchar || c >= font->firstchar + font->size) {
-    c = font->defaultchar;
-  }
-
-  int index = c - font->firstchar;
-  const font_bits_t *charBits = font->bits + font->offset[index];
-  int charWidth = font->width ? font->width[index] : font->maxwidth;
-
-  for (int i = 0; i < font->height; i++) {
-    font_bits_t bits = charBits[i];
-    for (int j = 0; j < charWidth; j++) {
-      if (bits & (1 << (font->maxwidth - 1 - j))) {
-        int drawX = x + j;
-        int drawY = y + i;
-        if (drawX >= 0 && drawX < WIDTH && drawY >= 0 && drawY < HEIGHT) {
-          fb[drawY * WIDTH + drawX] = color;
+void RenderController::drawChar(int x, int y, char ch, unsigned short color,
+                                int scale) {
+  int w = charWidth(ch);
+  const font_bits_t *ptr;
+  if ((ch >= fdes->firstchar) && (ch - fdes->firstchar < fdes->size)) {
+    if (fdes->offset) {
+      ptr = &fdes->bits[fdes->offset[ch - fdes->firstchar]];
+    } else {
+      int bw = (fdes->maxwidth + 15) / 16;
+      ptr = &fdes->bits[(ch - fdes->firstchar) * bw * fdes->height];
+    }
+    int i, j;
+    for (i = 0; i < fdes->height; i++) {
+      font_bits_t val = *ptr;
+      for (j = 0; j < w; j++) {
+        if ((val & 0x8000) != 0) {
+          drawPixel(x + scale * j, y + scale * i, color, scale);
         }
+        val <<= 1;
       }
+      ptr++;
     }
   }
 }
 
-void RenderController::drawText(int x, int y, const char *text,
-                                const font_descriptor_t *font, uint16_t color) {
-  while (*text) {
-    drawChar(x, y, *text, font, color);
-    x += font->width ? font->width[*text - font->firstchar] : font->maxwidth;
-    text++;
+int RenderController::charWidth(int ch) {
+  int width;
+  if (!fdes->width) {
+    width = fdes->maxwidth;
+  } else {
+    width = fdes->width[ch - fdes->firstchar];
+  }
+  return width;
+}
+
+void RenderController::drawPixel(int x, int y, unsigned short color, int scale) {
+  int i, j;
+  for (i = 0; i < scale; i++) {
+    for (j = 0; j < scale; j++) {
+      if (x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
+        for (int k = 0; k < 5; k++) {
+          fb[x + k + WIDTH * y] = color;
+        }
+      }
+    }
   }
 }
