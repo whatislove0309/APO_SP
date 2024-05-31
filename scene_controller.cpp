@@ -11,6 +11,7 @@ SceneController::SceneController() {
   main_menu = new MainMenu(render_controller, knobs_controller);
   level = new Level(render_controller, knobs_controller, diod_controller);
   gameover_menu = new GameOverMenu(render_controller, knobs_controller);
+  settings_menu = new SettingsMenu(render_controller, knobs_controller);
 }
 
 void SceneController::startGame() {
@@ -34,6 +35,10 @@ void SceneController::startGame() {
       gameover_menu->draw();
       setGameState(gameover_menu->getGameState());
 
+    } else if (game_state == "settings_menu") {
+      settings_menu->setGameState(game_state);
+      settings_menu->draw();
+      setGameState(settings_menu->getGameState());
     }
 
     render_controller->update();

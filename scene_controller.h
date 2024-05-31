@@ -1,12 +1,15 @@
 #pragma once
+
+#include <iostream>
+#include <time.h>
+
 #include "diod_controller.h"
 #include "gameover_menu.h"
 #include "knobs_controller.h"
 #include "level.h"
 #include "main_menu.h"
 #include "render_controller.h"
-#include <iostream>
-#include <time.h>
+#include "settings_menu.h"
 
 class SceneController {
 private:
@@ -19,6 +22,7 @@ private:
   MainMenu *main_menu;
   Level *level;
   GameOverMenu *gameover_menu;
+  SettingsMenu *settings_menu;
 
 public:
   SceneController();

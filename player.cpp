@@ -63,3 +63,20 @@ void Player::reset() {
   auto now = steady_clock::now();
   lastRecoveryTime = now;
 }
+
+void Player::setSkin(int index) {
+  switch (index) {
+  case 1:
+    active_ship = ship_1;
+    break;
+  case 2:
+    active_ship = ship_2;
+    break;
+  case 3:
+    active_ship = ship_3;
+    break;
+  default:
+    active_ship = ship_1;
+    break;
+  }
+}

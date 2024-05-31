@@ -32,4 +32,5 @@ public:
   void damage();
   void recover();
   void reset();
+  void setSkin(int index);
 };
