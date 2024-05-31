@@ -27,7 +27,6 @@ void Level::draw() {
       player, asteroid_controller->asteroidsList());
 
   if (!player->getHealth()) {
-    reset();
     game_state = "game_over";
   }
 

@@ -12,8 +12,8 @@ SceneController::SceneController() {
 
   main_menu = new MainMenu(render_controller, knobs_controller);
   level = new Level(render_controller, knobs_controller, diod_controller, player);
+  settings_menu = new SettingsMenu(render_controller, knobs_controller, player);
   gameover_menu = new GameOverMenu(render_controller, knobs_controller);
-  settings_menu = new SettingsMenu(render_controller, knobs_controller);
 }
 
 void SceneController::startGame() {
@@ -24,6 +24,9 @@ void SceneController::startGame() {
       main_menu->setGameState(game_state);
       main_menu->draw();
       setGameState(main_menu->getGameState());
+      if (game_state == "level") {
+        level->reset();
+      }
 
     } else if (game_state == "level") {
       level->setGameState(game_state);
@@ -44,7 +47,6 @@ void SceneController::startGame() {
     }
 
     render_controller->update();
-
     clock_nanosleep(CLOCK_MONOTONIC, 0, &loop_delay, NULL);
   }
 }

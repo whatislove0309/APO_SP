@@ -9,7 +9,7 @@ LDFLAGS += -static
 LDLIBS += -lrt -lpthread
 #LDLIBS += -lm
 
-SOURCES = main.cpp mzapo_phys.c mzapo_parlcd.c serialize_lock.c utils.cpp knobs_controller.cpp render_controller.cpp parlcd_controller.cpp main_menu.cpp scene_controller.cpp level.cpp scene.cpp entity.cpp player.cpp bullet.cpp asteroid_controller.cpp asteroid.cpp bullet_controller.cpp collision_controller.cpp diod_controller.cpp gameover_menu.cpp font_rom8x16.c
+SOURCES = main.cpp mzapo_phys.c mzapo_parlcd.c serialize_lock.c utils.cpp knobs_controller.cpp render_controller.cpp parlcd_controller.cpp main_menu.cpp scene_controller.cpp level.cpp scene.cpp entity.cpp player.cpp bullet.cpp asteroid_controller.cpp asteroid.cpp bullet_controller.cpp collision_controller.cpp diod_controller.cpp gameover_menu.cpp font_rom8x16.c settings_menu.cpp
 #SOURCES += font_prop14x16.c font_rom8x16.c
 TARGET_EXE = not_star_wars
 TARGET_IP ?= 192.168.135.14
