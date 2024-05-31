@@ -16,6 +16,8 @@ private:
   DiodController *diod_controller;
   struct timespec loop_delay;
 
+  Player *player;
+
   MainMenu *main_menu;
   Level *level;
   GameOverMenu *gameover_menu;

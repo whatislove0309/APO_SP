@@ -1,9 +1,10 @@
 #include "level.h"
 
-Level::Level(RenderController *render_controller, KnobsController *knobs_controller, DiodController *diod_controller)
+Level::Level(RenderController *render_controller, KnobsController *knobs_controller, 
+  DiodController *diod_controller, Player *player)
     : Scene::Scene(render_controller, knobs_controller) {
   this->diod_controller = diod_controller;
-  player = new Player(render_controller, knobs_controller, diod_controller);
+  this->player = player;
   asteroid_controller = new AsteroidController(render_controller);
   bullet_controller = new BulletController(render_controller);
   collision_controller = new CollisionController([this]() { this->updateScore(); });

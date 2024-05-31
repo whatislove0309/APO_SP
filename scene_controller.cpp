@@ -8,8 +8,10 @@ SceneController::SceneController() {
 
   game_state = "main_menu";
 
+  player = new Player(render_controller, knobs_controller, diod_controller);
+
   main_menu = new MainMenu(render_controller, knobs_controller);
-  level = new Level(render_controller, knobs_controller, diod_controller);
+  level = new Level(render_controller, knobs_controller, diod_controller, player);
   gameover_menu = new GameOverMenu(render_controller, knobs_controller);
 }
 
