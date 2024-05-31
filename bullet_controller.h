@@ -18,4 +18,5 @@ public:
     void draw();
     void createBullet(int x, int y);
     void shoot(int x1, int x2, int y);
+    void reset();
 };

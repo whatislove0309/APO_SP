@@ -26,6 +26,7 @@ void Level::draw() {
   collision_controller->checkPlayerCollsion(player, asteroid_controller->asteroidsList());
 
   if (!player->getHealth()) {
+    reset();
     game_state = "game_over";
   }
 
@@ -47,4 +48,11 @@ void Level::printScore() {
 
 int Level::getScore() {
   return score;
+}
+
+void Level::reset() {
+  score = 0;
+  player->reset();
+  bullet_controller->reset();
+  asteroid_controller->reset();
 }

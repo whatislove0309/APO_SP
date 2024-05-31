@@ -3,12 +3,18 @@
 GameOverMenu::GameOverMenu(RenderController *render_controller, KnobsController *knobs_controller)
     : Scene::Scene(render_controller, knobs_controller) {
   this->score = score;
-  game_state = "gameover_menu";
+  game_state = "game_over";
 }
 
 void GameOverMenu::draw() { 
     render_controller->drawGameOverBackground(); 
+    render_controller->drawText(115, 280, "Main Menu", 0xfff, 2);
     drawScore();
+
+    if (knobs_controller->is_green_pressed) {
+      setGameState("main_menu");
+      knobs_controller->disable(1);
+    }
 }
 
 void GameOverMenu::setScore(int score) { 

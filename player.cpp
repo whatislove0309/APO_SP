@@ -48,3 +48,12 @@ void Player::recover() {
     health++;
   }
 }
+
+void Player::reset() {
+  using namespace std::chrono;
+  this->health = maxHealth;
+  x = defX;
+  y = defY;
+  auto now = steady_clock::now();
+  lastRecoveryTime = now;
+}

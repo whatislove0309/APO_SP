@@ -19,5 +19,6 @@ public:
     void generateAsteroids();
     std::vector<Asteroid *>* asteroidsList();
     void draw();
+    void reset();
     int getRandomX();
 };

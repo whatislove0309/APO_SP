@@ -18,15 +18,19 @@ void SceneController::startGame() {
     knobs_controller->update();
 
     if (game_state == "main_menu") {
+      main_menu->setGameState(game_state);
       main_menu->draw();
       setGameState(main_menu->getGameState());
 
     } else if (game_state == "level") {
+      level->setGameState(game_state);
       level->draw();
       setGameState(level->getGameState());
 
     } else if (game_state == "game_over") {
+      gameover_menu->setGameState(game_state);
       gameover_menu->setScore(level->getScore());
+
       gameover_menu->draw();
       setGameState(gameover_menu->getGameState());
       

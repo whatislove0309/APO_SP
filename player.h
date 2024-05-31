@@ -12,6 +12,8 @@ private:
   DiodController *diod_controller;
   int health;
   int maxHealth = 4;
+  int defX = 213;
+  int defY = 238;
   std::chrono::time_point<std::chrono::steady_clock> lastRecoveryTime;
   const int recoveryInterval = 20;
 
@@ -23,4 +25,5 @@ public:
   void draw();
   void damage();
   void recover();
+  void reset();
 };

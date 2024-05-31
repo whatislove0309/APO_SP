@@ -1,5 +1,6 @@
 #pragma once
 
+#include <chrono>
 #include "stdio.h"
 
 #include "mzapo_phys.h"
@@ -20,9 +21,12 @@ private:
   } knobs_t;
 
   knobs_t knobs;
+  bool is_stopped = false;
+  std::chrono::steady_clock::time_point stop_time;
 
 public:
   KnobsController();
   bool is_red_pressed, is_green_pressed, is_blue_pressed;
   void update();
+  void disable(int seconds);
 };

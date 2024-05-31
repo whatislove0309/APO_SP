@@ -30,4 +30,5 @@ public:
   void updateScore();
   void printScore();
   int getScore();
+  void reset();
 };

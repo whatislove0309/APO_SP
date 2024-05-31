@@ -7,7 +7,6 @@ AsteroidController::AsteroidController(RenderController *render_controller)
 
 void AsteroidController::generateAsteroids()
 {
-
     auto now = std::chrono::steady_clock::now();
     if ((now - last_time) > bullet_delay)
     {
@@ -39,4 +38,10 @@ int AsteroidController::getRandomX()
 std::vector<Asteroid *>* AsteroidController::asteroidsList()
 {
     return &asteroids;
+}
+
+void AsteroidController::reset() {
+    for (Asteroid *asteroid : asteroids) {
+        asteroid->destroy();
+    }
 }
