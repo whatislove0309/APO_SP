@@ -120,6 +120,10 @@ void RenderController::drawChar(int x, int y, char ch, uint16_t color, int scale
 }
 
 int RenderController::charWidth(int ch) {
+  if (ch < fdes->firstchar || ch > fdes->firstchar + fdes->size) {
+    ch = fdes->defaultchar;
+  }
+
   int width;
   if (!fdes->width) {
     width = fdes->maxwidth;
