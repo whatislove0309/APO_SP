@@ -14,6 +14,7 @@ void MainMenu::draw() {
   }
   if (knobs_controller->is_green_pressed) {
     render_controller->higlightRegion(58, 217, 142, 35);
+    knobs_controller->disable(1);
     setGameState("settings_menu");
   }
 }
