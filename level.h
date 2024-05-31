@@ -1,17 +1,17 @@
 #pragma once
-#include <iostream>
 #include <chrono>
-#include <thread>
 #include <cstdio>
+#include <iostream>
+#include <thread>
 
-#include "knobs_controller.h"
-#include "player.h"
-#include "render_controller.h"
-#include "scene.h"
 #include "asteroid_controller.h"
 #include "bullet_controller.h"
 #include "collision_controller.h"
 #include "diod_controller.h"
+#include "knobs_controller.h"
+#include "player.h"
+#include "render_controller.h"
+#include "scene.h"
 
 class Level : public Scene {
 protected:

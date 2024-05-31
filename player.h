@@ -1,6 +1,6 @@
 #pragma once
-#include <vector>
 #include <chrono>
+#include <vector>
 
 #include "bullet.h"
 #include "diod_controller.h"

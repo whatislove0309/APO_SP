@@ -1,7 +1,7 @@
 #include "knobs_controller.h"
 
 KnobsController::KnobsController() {
-    knobs_mem_base = (unsigned char *)map_phys_address(SPILED_REG_BASE_PHYS, SPILED_REG_SIZE, 0);
+  knobs_mem_base = (unsigned char *)map_phys_address(SPILED_REG_BASE_PHYS, SPILED_REG_SIZE, 0);
 }
 
 void KnobsController::update() {

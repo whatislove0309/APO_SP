@@ -9,4 +9,6 @@ void Scene::setGameState(std::string game_state) {
     this->game_state = game_state;
 }
 
-std::string Scene::getGameState() { return game_state; }
+std::string Scene::getGameState() { 
+    return game_state; 
+}

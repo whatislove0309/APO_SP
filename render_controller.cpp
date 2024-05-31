@@ -7,8 +7,7 @@ RenderController::RenderController() {
 
   backgroundImage = loadImg("/tmp/deshkvla/assets/background.565");
   levelBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
-  gameOverBackgroundImage =
-      loadImg("/tmp/deshkvla/assets/background_gameover.565");
+  gameOverBackgroundImage = loadImg("/tmp/deshkvla/assets/background_gameover.565");
   ship_1 = loadImg("/tmp/deshkvla/assets/ship_1.565");
   asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
 
@@ -22,7 +21,9 @@ void RenderController::update() {
   }
 }
 
-void RenderController::reset() { fb = new unsigned short[WIDTH * HEIGHT]; }
+void RenderController::reset() { 
+  fb = new unsigned short[WIDTH * HEIGHT]; 
+}
 
 void RenderController::drawMainBackground() {
   drawImage(0, 0, backgroundImage);
@@ -72,9 +73,13 @@ void RenderController::higlightRegion(int x, int y, int width, int height) {
   }
 }
 
-void RenderController::drawShip(int x) { drawImage(x, 248, ship_1); }
+void RenderController::drawShip(int x) { 
+  drawImage(x, 248, ship_1); 
+}
 
-void RenderController::drawAsteroid(int x, int y) { drawImage(x, y, asteroid); }
+void RenderController::drawAsteroid(int x, int y) { 
+  drawImage(x, y, asteroid); 
+}
 
 void RenderController::drawBullet(int x, int y, int width, int height) {
   for (int i = 0; i < width; i++) {
@@ -94,11 +99,10 @@ void RenderController::drawText(int x, int y, const char *text, uint16_t color, 
   }
 }
 
-
 void RenderController::drawChar(int x, int y, char ch, uint16_t color, int scale) {
   int w = charWidth(ch);
   const font_bits_t *ptr;
-  
+
   if ((ch >= fdes->firstchar) && (ch - fdes->firstchar < fdes->size)) {
     if (fdes->offset) {
       ptr = &fdes->bits[fdes->offset[ch - fdes->firstchar]];
@@ -133,7 +137,7 @@ int RenderController::charWidth(int ch) {
   return width;
 }
 
-int RenderController::wordWidth(const char* text) {
+int RenderController::wordWidth(const char *text) {
   int totalWidth = 0;
 
   while (*text) {
@@ -155,4 +159,3 @@ void RenderController::drawPixel(int x, int y, uint16_t color, int scale) {
     }
   }
 }
-

@@ -1,18 +1,18 @@
 #pragma once
-#include "render_controller.h"
 #include "knobs_controller.h"
+#include "render_controller.h"
 
-class Entity
-{
+class Entity {
 protected:
-    int x, y, width, height, speed;
-    RenderController *render_controller;
+  int x, y, width, height, speed;
+  RenderController *render_controller;
+
 public:
-    Entity(RenderController *render_controller, int x, int y, int width, int height);
-    virtual void draw(int x, int y){};
-    void setPosition(int x, int y);
-    virtual int getX();
-    virtual int getY();
-    int getWidth();
-    int getHeight();
+  Entity(RenderController *render_controller, int x, int y, int width, int height);
+  virtual void draw(int x, int y) {};
+  void setPosition(int x, int y);
+  virtual int getX();
+  virtual int getY();
+  int getWidth();
+  int getHeight();
 };

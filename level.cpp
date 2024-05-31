@@ -1,9 +1,7 @@
 #include "level.h"
 
-Level::Level(RenderController *render_controller,
-             KnobsController *knobs_controller, DiodController *diod_controller)
-    : Scene::Scene(render_controller, knobs_controller)
-{
+Level::Level(RenderController *render_controller, KnobsController *knobs_controller, DiodController *diod_controller)
+    : Scene::Scene(render_controller, knobs_controller) {
   this->diod_controller = diod_controller;
   player = new Player(render_controller, knobs_controller, diod_controller);
   asteroid_controller = new AsteroidController(render_controller);
@@ -22,8 +20,10 @@ void Level::draw() {
     bullet_controller->shoot(x1, x2, player->getY());
   }
 
-  collision_controller->checkBulletCollision(bullet_controller->bulletsList(), asteroid_controller->asteroidsList());
-  collision_controller->checkPlayerCollsion(player, asteroid_controller->asteroidsList());
+  collision_controller->checkBulletCollision(
+      bullet_controller->bulletsList(), asteroid_controller->asteroidsList());
+  collision_controller->checkPlayerCollsion(
+      player, asteroid_controller->asteroidsList());
 
   if (!player->getHealth()) {
     reset();
@@ -36,8 +36,8 @@ void Level::draw() {
   printScore();
 }
 
-void Level::updateScore() {
-  score += 10;
+void Level::updateScore() { 
+  score += 10; 
 }
 
 void Level::printScore() {
@@ -46,8 +46,8 @@ void Level::printScore() {
   render_controller->drawText(20, 20, buffer, 0xfff, 2);
 }
 
-int Level::getScore() {
-  return score;
+int Level::getScore() { 
+  return score; 
 }
 
 void Level::reset() {

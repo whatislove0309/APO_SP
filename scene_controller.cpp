@@ -33,9 +33,7 @@ void SceneController::startGame() {
 
       gameover_menu->draw();
       setGameState(gameover_menu->getGameState());
-      
-    } else if (game_state == "score_menu") {
-      
+
     }
 
     render_controller->update();

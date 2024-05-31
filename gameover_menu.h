@@ -12,8 +12,7 @@ private:
 
 public:
   using Scene::Scene;
-  GameOverMenu(RenderController *render_controller,
-               KnobsController *knobs_controller);
+  GameOverMenu(RenderController *render_controller, KnobsController *knobs_controller);
   void draw();
   void setScore(int score);
   void drawScore();

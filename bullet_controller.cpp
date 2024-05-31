@@ -33,7 +33,7 @@ void BulletController::shoot(int x1, int x2, int y) {
 }
 
 std::vector<Bullet *> *BulletController::bulletsList() { 
-    return &bullets; 
+  return &bullets; 
 }
 
 void BulletController::reset() {

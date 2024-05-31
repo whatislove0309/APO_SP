@@ -44,7 +44,7 @@ public:
   void higlightRegion(int x, int y, int width, int height);
   void drawChar(int x, int y, char ch, uint16_t color, int scale);
   int charWidth(int ch);
-  int wordWidth(const char* text);
+  int wordWidth(const char *text);
   void drawPixel(int x, int y, uint16_t color, int scale);
   void drawText(int x, int y, const char *text, uint16_t color, int scale);
 };
