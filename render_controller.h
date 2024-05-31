@@ -20,6 +20,7 @@ private:
   Image *levelBackgroundImage;
   Image *asteroid;
   Image *gameOverBackgroundImage;
+  Image *settingsBackgroundImage;
 
   font_descriptor_t *fdes;
 
@@ -36,6 +37,7 @@ public:
   void drawMainBackground();
   void drawLevelBackground();
   void drawGameOverBackground();
+  void drawSettingsBackground();
   void drawImage(int x, int y, Image *image);
   void drawShip(int x, Image *image);
   void drawBullet(int x, int y, int width, int height);

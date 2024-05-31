@@ -13,10 +13,7 @@ void MainMenu::draw() {
     setGameState("level");
   }
   if (knobs_controller->is_green_pressed) {
-    render_controller->higlightRegion(58, 192, 142, 35);
-  }
-  if (knobs_controller->is_blue_pressed) {
-    render_controller->higlightRegion(58, 240, 142, 35);
+    render_controller->higlightRegion(58, 217, 142, 35);
     setGameState("settings_menu");
   }
 }
