@@ -5,11 +5,11 @@ RenderController::RenderController() {
   mem_base = parlcd_controller.getMemBase();
   fb = new unsigned short[WIDTH * HEIGHT];
 
-  backgroundImage = loadImg("./assets/background.565");
-  levelBackgroundImage = loadImg("./assets/background_level.565");
-  gameOverBackgroundImage = loadImg("./assets/background_gameover.565");
-  settingsBackgroundImage = loadImg("./assets/background_settings.565");
-  asteroid = loadImg("./assets/asteroid.565");
+  backgroundImage = loadImg("/tmp/deshkvla/assets/background.565");
+  levelBackgroundImage = loadImg("/tmp/deshkvla/assets/background_level.565");
+  gameOverBackgroundImage = loadImg("/tmp/deshkvla/assets/background_gameover.565");
+  settingsBackgroundImage = loadImg("/tmp/deshkvla/assets/background_settings.565");
+  asteroid = loadImg("/tmp/deshkvla/assets/asteroid.565");
 
   fdes = &font_rom8x16;
 }
